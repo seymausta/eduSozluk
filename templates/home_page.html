@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anasayfa</title>
+</head>
+<body>
+<h1>BAŞLIKLAR</h1>
+<ul>
+    {% for baslik in basliklar %} <!-- #jinja2'de bir döngünün başlangıcını ve sonunu işaretler -->
+        <li><a href="/baslik/{{baslik.id}}">{{baslik.baslik}}</a></li> <!-- herbaşlık için bir liste ögesi oluşturulacak -->
+    {% endfor %}                  <!--her bağlantının bir id değeri olan url'e yönlendirileceği -> href="/baslik/{{baslik.id}} -->
+</ul>                         <!--{{baslik.id}} her döngüdeki başlık nesnesinin id özelliğine karşılık gelir -->
+</body>                        <!--{{baslik.baslik}} kısmı-->
+</html>
+
