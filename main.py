@@ -1,4 +1,4 @@
-from flask import Flask, render_template  # render_template html şablonlarını render etmek için kullanılır
+from flask import Flask, render_template, request,redirect  # render_template html şablonlarını render etmek için kullanılır
 
 app = Flask('app')  # flask uygulaması oluşturuluyor, app parametresi uygulamanın adı
 
@@ -28,5 +28,12 @@ def baslik_goster(baslik_id, baslik_metin):
     dosyadan_yazilar = dosya.readlines()
     return render_template("baslik_icerik.html", baslik=baslik_metin, icerikler=dosyadan_yazilar, baslik_id=baslik_id)
 
+@app.route('/yazi-ekle', methods=['POST'])
+def yazi_ekle():
+    baslik_id=request.form.get('txtBaslikId')
+    yazi=request.form.get('txtYazi')
+    dosya = open(f"./sozluk_dosyalar/{baslik_id}.txt", "a", encoding="utf-8")
+    dosya.write("\n" + yazi)
+    return redirect("/",302)
 
 app.run(debug=True, host='0.0.0.0', port=5000)

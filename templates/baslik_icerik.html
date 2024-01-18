@@ -13,8 +13,10 @@
     </ul>
 
 <h2>Yeni yazı ekle:</h2>
-    <form>
-
+    <form action="/yazi-ekle" method="post">
+        <input type="hidden" id="txtBaslikId" name="txtBaslikId" value="{{baslik_id}}">
+        <input type="text" id="txtYazi" name="txtYazi"><br>
+        <input type="submit" value="Gönder">
     </form>
 </body>
 </html>
