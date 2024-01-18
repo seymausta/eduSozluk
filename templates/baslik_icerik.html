@@ -7,8 +7,8 @@
 <body>
     <h1>{{ baslik }}</h1>
     <ul>
-        {% for icerik in icerikler %}
-            <li>{{ icerik }}</li>
+        {% for yazi in yazilar %}
+            <li>{{ yazi['yazi'] }}</li>
         {% endfor %}
     </ul>
 
@@ -18,5 +18,8 @@
         <input type="text" id="txtYazi" name="txtYazi"><br>
         <input type="submit" value="Gönder">
     </form>
+<p>
+    <a href="/"> Ana Sayfa</a>
+</p>
 </body>
 </html>

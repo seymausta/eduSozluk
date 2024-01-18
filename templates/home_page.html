@@ -4,10 +4,10 @@
     <title>Anasayfa</title>
 </head>
 <body>
-<h1>BAŞLIKLAR</h1>
+<h1>Gündem</h1>
 <ul>
     {% for b in basliklar %}
-        <li><a href="/baslik/{{b['id']}}/{{b['baslik']}}">{{ b['baslik'] }}</a></li>
+        <li><a href="/baslik/{{b['_id']}}">{{ b['baslik'] }}</a></li>
  <!-- herbaşlık için bir liste ögesi oluşturulacak -->
     {% endfor %}                    <!--her bağlantının bir id değeri olan url'e yönlendirileceği  href="/baslik/{{baslik.id}} -->
 </ul>                               <!--{{baslik.id}} her döngüdeki başlık nesnesinin id özelliğine karşılık gelir -->
